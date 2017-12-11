@@ -1,0 +1,127 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.header{
+    width: 100%;
+    height: 137px;
+    background-color: black;
+    background-image: linear-gradient(to left, #656b74, #253143);
+    text-align: center;
+}
+.Phrase-Corrector {
+    width: 277px;
+    height: 62px;
+    font-family: 'Cookie',cursive;
+    font-size: 55.8px;
+    text-align: left;
+    color: #ffffff;
+    
+}
+.p {
+    width: 31px;
+    height: 62px;
+    font-family: Cookie;
+    font-size: 55.8px;
+    text-align: left;
+    color: #ffffff;
+/*    border-bottom: 10px solid black;*/
+    text-decoration: underline;
+    text-decoration-color: red;
+
+}
+
+.titleLogoContainer{
+    padding-top: 22px;
+}
+.login-form{
+    display: block;
+    width: 380px;
+    height: auto;
+    margin: 0 auto;
+    padding: 40px;
+    position: relative;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+}
+.content{
+    height: -webkit-calc(100vh - 137px);
+    height: -moz-calc(100vh - 137px);
+    height: calc(100vh - 137px)
+/*    width: 100%;*/
+    position: relative;
+    padding: 7% 0;
+    background-image: linear-gradient(to left, #e0eafc, #e0eafc, #f2fcfe);
+/*    border: solid 1px #979797;*/
+}
+.fa-pencil{
+    color: white;
+}
+.username>input{
+    height: 50px;
+    border: none;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #000000;
+}
+.password>input{
+    height: 50px;
+    border: none;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #000000;
+}
+.fa-user{
+    position: relative;
+    top: 5px;
+    color: #a3a3a3;
+}
+.fa-lock{
+    position: relative;
+    top: 5px;
+    color: #a3a3a3;
+}
+.loginBtn{
+    width: 280px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #384252;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+}
+.loginText{
+    font-family: SourceSansPro;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    top: 10px;
+}
+#rememberMe{
+     font-family: Lato;
+     font-size: 16px;
+     color: #000000;
+}
+.productOf{
+    width: 15%;
+    margin: 0 auto;
+}
+.Product-of {
+  width: 84px;
+  height: 25px;
+  opacity: 0.89;
+  font-family: OpenSans;
+  font-size: 16px;
+  line-height: 1.56;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #48494d;
+}
+#knolLogo{
+    position: relative;
+    top: 0px;
+}

@@ -1,0 +1,227 @@
+<html>
+    <header>
+        <meta name="google-signin-client_id" content="382928189297-r24ku3dn8utd8h7ktstf4mopphiia89a.apps.googleusercontent.com">
+        <link rel="stylesheet" type="text/css" href="res/css/firstPage.css">
+        <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+        <link rel="stylesheet" href="res/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        
+
+    </header>
+    
+    <body>
+        <div class="header container-fluid">
+            <div class="row">
+                <div class="titleLogoContainer col-4">
+                    <span class="p">P</span>
+                    <i class="fa fa-pencil fa-2x" style="font-size: 25px" aria-hidden="true"></i>
+                    <span class="title Phrase-Corrector">Phrase Corrector</span>
+                </div>
+                <div class="col-3">
+                
+                </div>
+                
+                <div class="headerRight col-5">
+                    <div class="logout" style="float:right;"><a id="logout"  href="#">LOGOUT</a></div>
+                    <div class="profile" style="float:right;"><a id="profile" href="#" data-toggle="modal" data-target="#exampleModalProfile">PROFILE</a></div>
+                    <div class="greeting" style="float:right;">Hello, <span id="username">Michael Scott</span></div>
+                    <i class="fa fa-hand-paper-o" aria-hidden="true" style="float:right; color: white; font-size: 25px"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content container-fluid">
+            <div class="row content-header">
+                <div class="col-2"></div>
+                <div class="col-4">
+                    Sentence <span class="sentenceNo">1</span>
+                </div>
+                <div class="col-4">
+                    <!-- Button trigger modal -->
+                    <button type="button" id="submitButton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                      Submit
+                    </button>
+                    
+                    <span id="time" style="float: right; margin: 0 60px 0 10px">00:00:00</span>
+                    <i class="fa fa-clock-o" style="float: right; font-size: 25px;" aria-hidden="true"></i>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="content-left col-4">
+                    <div class="row-headers row">
+                        <div class="col-8">
+                            <b>Step 1: </b>Correct the following sentence 
+                            <span>(23 Words)</span>
+                        </div>
+                        <div class="col-4">
+                            <a id="resetChanges" href="#" style="float: right;">Reset Changes</a>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col">
+                            <textarea id="editableText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec sagittis mi. Aliquam ultrices laoreet felis, ut venenatis dolor aliquet in. Aenean sollicitudin, mi vitae vulputate mollis, lorem lacus efficitur eros, sed congue est dui et elit. Donec dictum nibh vel faucibus lobortis. Quisque a malesuada metus. Duis eget sem ante.</textarea>
+                        </div>
+                    </div><br><br>
+                    <div class="row-headers row">
+                        <div class="col-8">
+                            Compare with the original sentence 
+                        </div>
+                        <div class="col-4">
+                            <a href="#" style="float: right;">Collapse</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <p id="textDiff" style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec sagittis mi. Aliquam ultrices laoreet felis, ut venenatis dolor aliquet in. Aenean sollicitudin, mi vitae vulputate mollis, lorem lacus efficitur eros, sed congue est dui et elit. Donec dictum nibh vel faucibus lobortis. Quisque a malesuada metus. Duis eget sem ante.</p>
+                    
+                    <input id="gotoTwo" class="clickedButton" style="float: left;" type="button" value="Go to Step 2">
+                    
+                    <input type="checkbox" id="showChangeCkBx" value="showChangeCkBx" style="float: right; position: relative; top: 7px;"> <span id="showChanges" style="float: right;">Show Changes&nbsp;&nbsp;</span>
+                </div>
+                <div class="content-right col-4">
+                    <div class="row-headers rightRowHeader row">
+                        <div class="col-8">
+                            <b>Step 2: </b>Categorise your changes accordingly 
+                        </div>
+                        <div class="col-4">
+                            <a href="#" style="float: right;"><span id="numPending">0</span> Pending</a>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="scrollable row">
+                            
+                            <div class="container categoryCard">
+                                <div class="row">
+                                    <div class="col">&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"></div>
+                                    <div class="col-4 wrongWord">
+                                        Their
+                                    </div>
+                                    <div class="col-2">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-4 correctWord">
+                                        There
+                                    </div>
+                                    <div class="col-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"></div>
+                                    <span style="opacity: 0.5;font-family: OpenSans;font-size: 15px;font-weight: 600;text-align: left; color: #212121;">Select the type of correction you made here</span> 
+                                </div>
+                                
+                                <br>
+                                <div class="row">
+                                    <div class="col-2"></div>
+                                    <div class="col-2">
+                                        <button class="CategoryButton" type="button">Spelling</button>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-2">
+                                        <button class="CategoryButton" type="button">Grammar</button>
+                                    </div>
+                                    <div class="col-1"></div>
+                                    <div class="col-2">
+                                        <button class="CategoryButton" type="button">Punctuational</button>
+                                    </div>
+                                    <div class="col-2"></div>
+                                </div>
+                            </div>
+            
+                    </div>
+                </div>
+                <div class="col-2">
+                </div>
+          </div>
+            <br><br>
+            <div class="row">
+                <div class="col-7"></div>
+                <div class="col-3">
+                    <img id="knolLogo" src="res/img/logo-main.png" style="float: right">
+                    <span class="Product-of" style="float: right">Product Of&nbsp;&nbsp;&nbsp;</span>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-12">&nbsp;</div>
+            </div>
+
+            <!-- Modal -->
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to submit?
+                  </div>
+                  <div class="modal-footer">
+                      <button id="submitButton" type="button"  data-dismiss="modal">Close</button>&nbsp;&nbsp;
+                    <button id="submitButton" class="confirmSubmit" type="button" data-dismiss="modal">SUBMIT</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="modal fade" id="exampleModalProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body container">
+                      <div class="row">
+                        <div class="col-2">
+                            <img class="userImage" src="">  
+                        </div>
+                        <div class="col-10 align-self-center">
+                            &nbsp;&nbsp;&nbsp;
+                            <span style="font-size: 22px; margin-left: 20px; font-weight: bold;" id="modalUsername">adasdasd</span>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        
+                      </div>
+                      
+                      <div class="row justify-content-center" style="text-align: center; margin-top: 30px;">
+                        <div class="col-4 paragraphsCorrected" style="font-weight: bold;">0</div>
+                        <div class="col-4 wordsCorrected" style="font-weight: bold;">0</div>
+                        <div class="col-4 minutesSpent" style="font-weight: bold;">0</div>
+                      </div>
+                      <div class="row justify-content-center countLabel" style="text-align: center; margin-top: 10px;">
+                        <div class="col-4">Submissions</div>
+                        <div class="col-4">Words Corrected</div>
+                        <div class="col-4">Minutes Spent</div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js?onload=onLoad"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="res/js/script.js"></script>
+    </body>
+</html>
