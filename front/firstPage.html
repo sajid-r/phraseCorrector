@@ -71,15 +71,18 @@
                             Compare with the original sentence 
                         </div>
                         <div class="col-4">
-                            <a href="#" style="float: right;">Collapse</a>
+                            <a href="#" style="float: right;" id="collapse">Collapse</a>
                         </div>
                     </div>
                     <hr>
-                    <p id="textDiff" style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec sagittis mi. Aliquam ultrices laoreet felis, ut venenatis dolor aliquet in. Aenean sollicitudin, mi vitae vulputate mollis, lorem lacus efficitur eros, sed congue est dui et elit. Donec dictum nibh vel faucibus lobortis. Quisque a malesuada metus. Duis eget sem ante.</p>
+                    <div class="row" id="originalTextDiv" style="margin: 10px; display: block;">
+                        <p id="originalTextP" style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec sagittis mi. Aliquam ultrices laoreet felis, ut venenatis dolor aliquet in. Aenean sollicitudin, mi vitae vulputate mollis, lorem lacus efficitur eros, sed congue est dui et elit. Donec dictum nibh vel faucibus lobortis. Quisque a malesuada metus. Duis eget sem ante.</p>
+                    </div>
                     
-                    <input id="gotoTwo" class="clickedButton" style="float: left;" type="button" value="Go to Step 2">
                     
-                    <input type="checkbox" id="showChangeCkBx" value="showChangeCkBx" style="float: right; position: relative; top: 7px;"> <span id="showChanges" style="float: right;">Show Changes&nbsp;&nbsp;</span>
+<!--                    <input id="gotoTwo" class="clickedButton" style="float: left;" type="button" value="Go to Step 2">-->
+                    
+<!--                    <input type="checkbox" id="showChangeCkBx" value="showChangeCkBx" style="float: right; position: relative; top: 7px;"> <span id="showChanges" style="float: right;">Show Changes&nbsp;&nbsp;</span>-->
                 </div>
                 <div class="content-right col-4">
                     <div class="row-headers rightRowHeader row">
@@ -92,51 +95,19 @@
                         
                     </div>
                     <br>
-                    <div class="scrollable row">
-                            
-                            <div class="container categoryCard">
-                                <div class="row">
-                                    <div class="col">&nbsp;</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-1"></div>
-                                    <div class="col-4 wrongWord">
-                                        Their
-                                    </div>
-                                    <div class="col-2">
-                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="col-4 correctWord">
-                                        There
-                                    </div>
-                                    <div class="col-1"></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">&nbsp;</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-1"></div>
-                                    <span style="opacity: 0.5;font-family: OpenSans;font-size: 15px;font-weight: 600;text-align: left; color: #212121;">Select the type of correction you made here</span> 
-                                </div>
-                                
-                                <br>
-                                <div class="row">
-                                    <div class="col-2"></div>
-                                    <div class="col-2">
-                                        <button class="CategoryButton" type="button">Spelling</button>
-                                    </div>
-                                    <div class="col-1"></div>
-                                    <div class="col-2">
-                                        <button class="CategoryButton" type="button">Grammar</button>
-                                    </div>
-                                    <div class="col-1"></div>
-                                    <div class="col-2">
-                                        <button class="CategoryButton" type="button">Punctuational</button>
-                                    </div>
-                                    <div class="col-2"></div>
+                    <div class="scrollable container">
+                        
+                            <div class="row spinner-row" id="spinner-row">
+                                <div class="col-5"></div>
+                                <div class="col-3 align-self-center">
+                                    <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> 
                                 </div>
                             </div>
-            
+                            
+                            <div class="row" id="textDiffDiv" style="margin: 10px; display: block;">
+                                <p id="textDiff" style="font-size: 18px;"></p>
+                            </div>
+                            
                     </div>
                 </div>
                 <div class="col-2">
@@ -215,9 +186,57 @@
                 </div>
               </div>
             </div>
-            
-            
         </div>
+        
+        <div class="categoryCard" data-cardType="deletion" style="margin: 7px 0px">
+            <div class="row">
+                <div class="col">&nbsp;</div>
+            </div>
+            <div class="row collapseTrigger" data-toggle="collapse" data-target="#collapsible1">
+                <div class="col-1"></div>
+                <div class="col-8 wrongWord" style>
+                    Their
+                </div>
+                <div class="col-3">
+<!--                    <i class="fa fa-arrow-right cardArrow" aria-hidden="true"></i>-->
+                </div>
+<!--
+                <div class="col-4 correctWord">
+                    There
+                </div>
+-->
+                <div class="col-1"></div>
+            </div>
+            <div class="row">
+                    <div class="col">&nbsp;</div>
+            </div>
+            <div class="collapsible">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <span style="opacity: 0.5;font-family: OpenSans;font-size: 15px;font-weight: 600;text-align: left; color: #212121;">Select the type of correction you made here</span> 
+                </div>
+
+                <br>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-1"></div>
+                    <div class="col-3">
+                        <button class="CategoryButton spellingBtn" type="button">Spelling</button>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-3">
+                        <button class="CategoryButton grammarBtn" type="button">Grammar</button>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-3">
+                        <button class="CategoryButton punctuationBtn" type="button">Punctuational</button>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+        </div>
+            
+        
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://apis.google.com/js/platform.js?onload=onLoad"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
